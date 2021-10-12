@@ -17139,9 +17139,8 @@ keyboard.inline_keyboard = {
 {{text = 'مستقلبي', callback_data="/whklpp"},{text = 'الابراج', callback_data="/uwujjh"}}, 
 {{text = 'رزله', callback_data="/help15"},{text = 'رد عليه يابوت', callback_data="/help22"}}, 
 {{text = 'بتكره دا', callback_data="/help16"},{text = 'نكته', callback_data="/help23"}}, 
-{{text = 'حروف بالصور', callback_data="/Xcvb"},
+{{text = 'حروف بالصور', callback_data="/Xcvb"},{text = 'نسبه جمالي', callback_data="/help18"}},
 {{text = 'غنيلي', callback_data="/help17"}},
-{{text = 'نسبه جمالي', callback_data="/help18"},
 {{text = '⌯القائمه الرئيسيه⌯', callback_data="/add"}},
 {{text = 'sᴏᴜʀᴄᴇ ᴍᴀᴛʀɪx', url="t.me/G8_01"}},
 }
