@@ -14252,7 +14252,7 @@ if text then
 list = {'سلام عليكم'}
 for k,v in pairs(list) do
 if string.find(text,v) ~= nil then
-send(msg.chat_id_,msg.id_, 'وعليكم السلام ᗪ،🖤' ') 
+send(msg.chat_id_,msg.id_, 'وعليكم السلام ᗪ،🖤 ') 
 return false
 end
 end
