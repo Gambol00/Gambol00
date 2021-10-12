@@ -682,56 +682,56 @@ function sendin(chat,msgid,user,user_id)
 local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. chat ..'&user_id='.. user_id)
 local Json_Info = JSON.decode(Chek_Info)
 if Json_Info.result.can_change_info == true then
-info = '• ✗ •' 
+info = '• ✓ •' 
 infoo = 'false' 
 else 
-info = '• ✓ •' 
+info = '• ✘ •' 
 infoo = 'true' 
 end
 if Json_Info.result.can_delete_messages == true then
-delete = '• ✗ •' 
+delete = '• ✘ •' 
 deletee = 'false' 
 else 
 delete = '• ✓ •' 
 deletee = 'true' 
 end
 if Json_Info.result.can_invite_users == true then
-invite = '• ✗ •' 
+invite = '• ✘ •' 
 invitee = 'false' 
 else 
 invite = '• ✓ •' 
 invitee = 'true' 
 end
 if Json_Info.result.can_pin_messages == true then
-pin = '• ✗ •' 
+pin = '• ✘ •' 
 pinn = 'false' 
 else 
 pin = '• ✓ •' 
 pinn = 'true' 
 end
 if Json_Info.result.can_restrict_members == true then
-restrict = '• ✗ •' 
+restrict = '• ✘ •' 
 restrictt = 'false' 
 else 
 restrict = '• ✓ •' 
 restrictt = 'true' 
 end
 if Json_Info.result.can_promote_members == true then
-promote = '• ✗ •' 
+promote = '• ✘ •' 
 promotee = 'false' 
 else 
 promote = '• ✓ •' 
 promotee = 'true' 
 end 
 if Json_Info.result.can_manage_voice_chats == true then
-voice = '• ✗ •' 
+voice = '• ✘ •' 
 voicee = 'false' 
 else 
 voice = '• ✓ •' 
 voicee = 'true' 
 end
 if Json_Info.result.can_manage_chat == true then
-manage = '• ✗ •' 
+manage = '• ✘ •' 
 managee = 'false' 
 else 
 manage = '• ✓ •' 
@@ -3653,7 +3653,7 @@ local NameChat = NameChat:gsub('"',"")
 local NameChat = NameChat:gsub("*","") 
 local NameChat = NameChat:gsub("{","") 
 local NameChat = NameChat:gsub("}","")
-sendText(SUDO,"☆ تم طرد البوت من جروب \n\n☆ بواسطة  {"..Name.."}\n☆ اسم الجروب {"..NameChat.."}\n☆ ايدي الجروب {`"..msg.chat_id_.."`} ",0,'md')
+sendText(SUDO,"\n ☆بواسطة {'..Name..'}..\n ☆ايدي الجروب {'..IdChat..'}..\n ☆اسم الجروب {['..NameChat..']}..\n ☆الرابط {['..LinkGp..']}",0,'md')
 end,nil)
 end,nil)
 end
