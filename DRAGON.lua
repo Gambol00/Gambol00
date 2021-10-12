@@ -13983,7 +13983,7 @@ return false
 end
 
 if text == '🙄🙄' or text == '🙄🙄🙄' then
-send(msg.chat_id_,msg.id_, 'عينك بس سقف الجروب هيقع'
+send(msg.chat_id_,msg.id_, 'عينك بس سقف الجروب هيقع') 
 return false
 end
 
@@ -14008,7 +14008,7 @@ return false
 end
 
 if text == 'بكرهك' then
-send(msg.chat_id_,msg.id_, م طايق خلقه امك')
+send(msg.chat_id_,msg.id_, 'م طايق خلقه امك')
 return false
 end
 
