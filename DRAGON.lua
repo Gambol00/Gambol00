@@ -18017,9 +18017,8 @@ return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption
 end
 if Text == '/change-hklp' then
 local Teext =[[
-تواصـل مع مطـورين السورس للتنصيب
+تواصـل مع مطور السورس للتنصيب
  •━⌯━•❴↝ᴍᴀᴛʀɪx↜❵•━⌯━•
-
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
