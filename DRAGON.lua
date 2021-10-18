@@ -3792,7 +3792,7 @@ keyboard.inline_keyboard = {
 }
 {text = 'تنزيل عضو', callback_data="/tnzil"},
 },
-}
+{
 https.request("https://api.telegram.org/bot"..token..'/sendmessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(text).."&reply_to_message_id=markdown&reply_markup="..JSON.encode(keyboard)) 
 end
 
@@ -3817,7 +3817,7 @@ keyboard.inline_keyboard = {
 }
 {text = 'رفع مميز', callback_data="/mmiz"},{text = 'تنزيل مميز', callback_data="/unmmiz"},
 },
-}
+{
 https.request("https://api.telegram.org/bot"..token..'/sendmessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(text).."&reply_to_message_id=markdown&reply_markup="..JSON.encode(keyboard)) 
 end
 
@@ -3828,7 +3828,7 @@ keyboard.inline_keyboard = {
 {
 {text = 'تعديل الصلاحيات', callback_data='amr@'..msg.sender_user_id_..'/user@'..result.sender_user_id_.."/setiinginfo"}
 },
-}
+{
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
