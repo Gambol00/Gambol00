@@ -8683,7 +8683,7 @@ else
 tdcli_function ({ID = "GetUser",user_id_ = SUDO,},function(arg,result) 
 local function taha(extra, taha, success)
 if taha.photos_[0] then
-local Name = ✗ مــطـور الـبوت للتــواصـل ۾ الاســفـل ✗
+local Name = '✗ مــطـور الـبوت للتــواصـل ۾ الاســفـل ✗'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
