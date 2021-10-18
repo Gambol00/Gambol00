@@ -173,7 +173,7 @@ io.popen("mkdir File_Bot")
 io.popen("cd File_Bot && rm -rf commands.lua.1") 
 io.popen("cd File_Bot && rm -rf commands.lua.2") 
 io.popen("cd File_Bot && rm -rf commands.lua.3") 
-io.popen("cd File_Bot && wget https://github.com/Gambol00/Gambol00/main/File_Bot/commands.lua") 
+io.popen("cd File_Bot && wget https://github.com/Gambol00/matrix/main/File_Bot/commands.lua") 
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
@@ -1893,7 +1893,7 @@ echo '•━⌯━•❴↝ᴍᴀᴛʀɪx↜❵•━⌯━•\n 🔌l •⊱  �
 end
 if text == 'تحديث السورس ' and Devban(msg) then 
 os.execute('rm -rf DRAGON.lua')
-os.execute('wget https://github.com/Gambol00/Gambol00/main/DRAGON.lua')
+os.execute('wget https://github.com/Gambol00/matrix/main/DRAGON.lua')
 send(msg.chat_id_, msg.id_,' ☆ تم تحديث السورس')
 dofile('DRAGON.lua')  
 end
@@ -3647,7 +3647,7 @@ end
 return false
 end
 os.execute('rm -rf DRAGON.lua')
-os.execute('wget https://github.com/Gambol00/Gambol00/main/DRAGON.lua')
+os.execute('wget https://github.com/Gambol00/matrix/main/DRAGON.lua')
 send(msg.chat_id_, msg.id_,' ☆ تم تحديث السورس')
 dofile('DRAGON.lua')  
 end
@@ -7335,7 +7335,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if Devban(msg) then
-local Get_Files, res = https.request("https://github.com/Gambol00/Gambol00/main/getfile.json")
+local Get_Files, res = https.request("https://github.com/Gambol00/matrix/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
