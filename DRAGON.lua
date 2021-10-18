@@ -16583,18 +16583,14 @@ local Teext =[[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{
 {text = 'رفـع الادمــنيه', callback_data="/rf3admin"},{text = 'مــسـح الادمــنيه', callback_data="/deladmin"},
-},
-}
 {text = 'الادمــنيه', callback_data="/admins"},
-},
 }
 https.request("https://api.telegram.org/bot"..token..'/sendmessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(text).."&reply_to_message_id=markdown&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == 'الرابط' or text == 'رابط'  then
 local Text = [[
-•اختار نوع الرابط الي ترودي⇣
+•اختار نوع الرابط الي تريده⇣
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
