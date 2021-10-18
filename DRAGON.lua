@@ -20686,7 +20686,7 @@ keyboard.inline_keyboard = {
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
-ban_id.."Status:Ss"
+
 if Text == 'YYYBD_aza3h1'..data.sender_user_id_ and msa3d(data) then  
 bot_data:setex(ban_id.."Send:Bc:Grops" .. Chat_id .. ":" .. data.sender_user_id_, 600, true) 
 local Text ="اذاعه الي جروبات البوت♪ `"
