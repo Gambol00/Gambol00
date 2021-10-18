@@ -15141,12 +15141,8 @@ Namebot = "احـصائيـات "..Namebot..'\nالجــروبـات  ⸙ {'..G
 local msg_id = msg.id_/2097152/0.5  
 keyboard = {} 
 keyboard.inline_keyboard = {
-{
 {text = 'sᴏᴜʀᴄᴇ ᴍᴀᴛʀɪx', url = "https://t.me/G8_01"},
-},
-}
 {text = '𖤍 اضافه البوت لمجموعتك 𖤍 ' ,url="t.me/"..dofile("./Info.lua").botUserName.."?startgroup=start"},
-},
 }
 local function getpro(extra, result, success) 
 if result.photos_[0] then 
