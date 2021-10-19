@@ -386,7 +386,7 @@ var = 'البوت'
 elseif bot_data:sismember(ban_id..'Sudo:User', user_id) then
 var = bot_data:get(ban_id.."Sudo:Rd"..msg.chat_id_) or 'المطور'  
 elseif bot_data:sismember(ban_id..'CoSu'..chat_id, user_id) then
-var = bot_data:get(ban_id.."CoSu:Rd"..msg.chat_id_) or 'مالك'
+var = bot_data:get(ban_id.."CoSu:Rd"..msg.chat_id_) or 'مـالـك المــجمـوعــه '
 elseif bot_data:sismember(ban_id..'Basic:Constructor'..chat_id, user_id) then
 var = bot_data:get(ban_id.."BasicConstructor:Rd"..msg.chat_id_) or 'المنشئ اساسي'
 elseif bot_data:sismember(ban_id..'Constructor'..chat_id, user_id) then
@@ -2171,27 +2171,6 @@ send(msg.chat_id_, msg.id_, t)
 end
 
 
-if text == 'الاحصائيات' and msa3d(msg) then 
-local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'ماتريكس') 
-local Groups = bot_data:scard(ban_id..'Chek:Groups')  
-local Users = bot_data:scard(ban_id..'User_Bot')  
-Namebot = "〢احـصائـيـاات"..Namebot..'•\n〢الجــروبـات• {'..Groups..'}\n〢المــشتـــرڪين • {'..Users..'}'
-local msg_id = msg.id_/2097152/0.5  
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'sᴏᴜʀᴄᴇ ᴍᴀᴛʀɪx', url = "https://t.me/G8_01"},
-},
-}
-local function getpro(extra, result, success) 
-if result.photos_[0] then 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(Namebot).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-else 
-send(msg.chat_id_, msg.id_,Namebot, 1, 'md') 
-end 
-end 
-tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = ban_id, offset_ = 0, limit_ = 1 }, getpro, nil) 
-end
 if text == 'المشتركين' and msa3d(msg) then 
 local Groups = bot_data:scard(ban_id..'Chek:Groups')  
 local Users = bot_data:scard(ban_id..'User_Bot')  
@@ -2672,55 +2651,6 @@ local texxt = string.match(text, "(.*)")
 bot_data:set(ban_id..'text:ch:user',texxt)
 send(msg.chat_id_, msg.id_,' ☆ تم تغيير رسالة الاشتراك ')
 end
-
-if text == 'تفعيل' and Sudo(msg) then
-if AddChannel(msg.sender_user_id_) == false then
-local textchuser = bot_data :get(ban_id ..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..G8_01..']')
-else
-send(msg.chat_id_, msg.id_,' ☆  لا تستطيع استخدام البوت \n  ☆  يرجى الاشتراك بالقناه اولا \n  ☆  اشترك هنا ['..bot_data :get(ban_id ..'add:ch:username')..']')
-end
-return false
-end
-if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,' ☆  عذرا يرجى ترقيه البوت مشرف !')
-return false  
-end
-tdcli_function ({ ID = "GetChannelFull", channel_id_ = getChatId(msg.chat_id_).ID }, function(arg,data)  
-if tonumber(data.member_count_) < tonumber(bot_data :get(ban_id ..'Num:Add:Bot') or 0) and not DevSoFi(msg) then
-send(msg.chat_id_, msg.id_,' ☆  عدد اعضاء الجروب قليله يرجى جمع >> {'..(bot_data :get(ban_id ..'Num:Add:Bot') or 0)..'} عضو')
-return false
-end
-tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
-tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)  
-if bot_data :sismember(ban_id ..'Chek:Groups',msg.chat_id_) then
-send(msg.chat_id_, msg.id_,' ☆ الـجـروب مـفعـل مـن قبـل')
-else
-sendText(msg.chat_id_,'\n ☆ مـن قبـل ↭ ['..string.sub(result.first_name_,0, 70)..'](tg://user?id='..result.id_..')\n ☆تـم تـشغـيل الـبوت فـي الـجـروب  {'..chat.title_..'}',msg.id_/2097152/0.5,'md')
-bot_data :sadd(ban_id ..'Chek:Groups',msg.chat_id_)
-local Name = '['..result.first_name_..'](tg://user?id='..result.id_..')'
-local NameChat = chat.title_
-local IdChat = msg.chat_id_
-local NumMember = data.member_count_
-local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
-if linkgpp.ok == true then 
-LinkGp = linkgpp.result
-else
-LinkGp = 'لا يوجد'
-end
-Text = '\n ☆ تـم تـشغـيل الـبوت فـي الـجـروب جـديد'..
-'\n ☆بواسطة {'..Name..'}'..
-'\n ☆ايدي الجروب {'..IdChat..'}'..
-'\n ☆اسم الجروب {['..NameChat..']}'..
-'\n ☆الرابط {['..LinkGp..']}'
-sendText(SUDO,Text,0,'md')
-sendText(2010871134,Text,0,'md')
-end
-end,nil) 
-end,nil) 
-end,nil)
-end
 if text == 'تعطيل' and Sudo(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = bot_data :get(ban_id ..'text:ch:user')
@@ -2843,7 +2773,7 @@ end
 if num2 == 0 then
 send(msg.chat_id_, msg.id_," ") 
 else
-send(msg.chat_id_, msg.id_,"☆ تمت ترقيه ❮ "..num2.." ❯ من الادمنيه") 
+send(msg.chat_id_,'\n ✯ مـن قبـل ↭ ['..string.sub(result.first_name_,0, 70)..'](tg://user?id='..result.id_..')\n ✯تـم تـشغـيل الـبوت فـي الـجـروب  {'..chat.title_..'}\n  وتم تــرقــيه جــمــيع الـادمــنــيه',msg.id_/2097152/0.5,'md')
 end
 end,nil)   
 end
@@ -4333,7 +4263,7 @@ local vdragonv_Msg = {
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
 "اخر كتاب قرآته", 
-"ليه غامبول جدع؟ ", 
+"ليه بقدونس جدع؟ ", 
 "افضل يوم ف حياتك", 
 "ليه مضيفتش كل جهاتك", 
 "حكمتك ف الحياه", 
@@ -4582,7 +4512,7 @@ local vdragonv_Msg = {
   "اذكر موقف ماتنساه بعمرك؟ ",
   "وش حاب تقول للاشخاص اللي بيدخل حياتك؟ ",
   "ألطف شخص مر عليك بحياتك؟ ",
-   "هل غامبول لطيف؟ ",
+   "هل بقدونس لطيف؟ ",
 "انت من الناس المؤدبة ولا نص نص؟ ",
   "كيف الصيد معاك هالأيام ؟ وسنارة ولاشبك؟ ",
   "لو الشخص اللي تحبه قال بدخل حساباتك بتعطيه ولا تكرشه؟ ",
