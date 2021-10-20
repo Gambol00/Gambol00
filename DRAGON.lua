@@ -20604,21 +20604,5 @@ end
 end
 
 
-end -- end new msg dev.mr ban 
-end -- end callback dev.mr ban
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+end -- end new msg dev.mr gambol 
+end -- end callback dev.mr gambol
