@@ -21316,8 +21316,3 @@ tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100'
 end
 end
 end
-
-
-end -- end new msg dev.mr gambol 
-end -- end callback dev.mr gambol
-end 
