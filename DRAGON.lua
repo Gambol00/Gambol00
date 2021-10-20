@@ -15593,19 +15593,15 @@ bot_data:del(ban_id..'Mod:User'..msg.chat_id_)
 elseif userid == "180" then
 Vs = 'تم مسح المميزين'
 bot_data:del(ban_id..'Special:User'..msg.chat_id_)
-end
 elseif userid == "88" then
 Vs = 'تم مسح قائمه العام'
 bot_data:del(ban_id..'Special:User'..msg.chat_id_)
-end
 elseif userid == "09" then
 Vs = 'تم مسح الثانوين'
 bot_data:del(ban_id..'Special:User'..msg.chat_id_)
-end
 elseif userid == "34" then
 Vs = 'تم مسح الردود'
 bot_data:del(ban_id..'Special:User'..msg.chat_id_)
-end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '✯sᴏᴜʀᴄᴇ ᴍᴀᴛʀɪx✯', url="t.me/G8_01"}},
