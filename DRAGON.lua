@@ -1000,9 +1000,9 @@ send(msg.chat_id_, msg.id_,pre_msg)
 end
 
 --------------------------------------------------------------------------------------------------------------
-function G8_01(msg,data) -- بداية العمل
-if msg then
-local text = msg.content_.text_
+function G8_01(msg,data) -- بداية العمل 
+if msg then 
+local text = msg.content_.text_ 
 --------------------------------------------------------------------------------------------------------------
 if text == ("الردود المتعدده") and CoSu(msg) then
 if AddChannel(msg.sender_user_id_) == false then
